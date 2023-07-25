@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{float}
+\setstretch{1.3} 
+
+%\usepackage{csc}% unknown package
+\pagestyle{fancy}
+\fancyhead[L]{Bancroft Method}
+\fancyhead[R]{Page \thepage}
+\fancypagestyle{firstpage}{%
+  \lhead{}
+  \rhead{}
+}
+
+\begin{document}
+\begin{figure}[!tbp]
+  \begin{subfigure}[b]{0.2 \textwidth}
+    \includegraphics[width=\textwidth]{img/uni}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.25\textwidth}
+    \includegraphics[width=\textwidth]{img/fani}
+  \end{subfigure}
+\end{figure}
+\begin{center}
+\textbf{Bancroft Method} \\[1in]
+Professor : Dr. Farzaneh\\~\\
+St : AmirAbbas Saberi
+\\[4in]
+\textbf{University of Tehran}\\
+December,12,2022
+\end{center}
+	\thispagestyle{firstpage}
+\newpage
+\textbf{Bancroft Method : }\\
+If we want to be able obtain primitve receiver's position without priori knowledge, one of the solutions is Bancroft method.
+
+
+\begin{equation}
+  B^{T}a-B^{T}BM\begin{bmatrix}
+     r\\
+     c\delta t
+    
+\end{bmatrix} = \Lambda B^{T} \textbf{1} = 0
+\end{equation}\\
+
+\begin{equation}
+  \begin{bmatrix}
+     r\\
+     c\delta t
+    
+\end{bmatrix} = M(B^{T}B)^-1B^{T}(\Lambda\textbf{1}+a)
+\end{equation}\\
+\footnotesize {\begin{equation}
+\langle (B^{T}B)^-1B^{T} \textbf{1} \; , \; (B^{T}B)^-1B^{T} \textbf{1} \rangle \Lambda^2 + \\
+2[\langle (B^{T}B)^-1B^{T} \textbf{1} \; , \; (B^{T}B)^-1B^{T} a \rangle]\Lambda+\\
+\langle (B^{T}B)^-1B^{T} a \; , \; (B^{T}B)^-1B^{T} a \rangle = 0
+\end{equation}}\\
+where : \\
+\begin{center}
+$B =  \begin{bmatrix}
+     x^1 & y^1 & z^1 & PR^1\\
+     x^2 & y^2 & z^2 & PR^2\\
+     x^3 & y^3 & z^3 & PR^3\\
+     . & . & . & .\\
+     . & . & . & .\\
+     . & . & . & .\\
+     x^n & y^n & z^n & PR^n
+    
+\end{bmatrix} , a = \begin{bmatrix}
+     a_1\\
+     a_2\\
+     a_3\\
+     .\\
+     .\\
+     .\\
+     a_n
+\end{bmatrix} , a_j =\frac{1}{2} \langle \begin{bmatrix}
+     r^j\\
+     PR^j
+\end{bmatrix} \; , \; \begin{bmatrix}
+     r^j\\
+     PR^j
+\end{bmatrix}  \rangle$
+\end{center}
+\begin{center}
+
+$\Lambda = \frac{1}{2} \langle \begin{bmatrix}
+     r\\
+     c \delta t
+\end{bmatrix} \; , \; \begin{bmatrix}
+     r\\
+     c\delta t
+\end{bmatrix}  \rangle , \textbf{1} = \begin{bmatrix}
+     1\\
+     1\\
+     1\\
+     1\\
+     .\\
+     .\\
+     .\\
+     1
+\end{bmatrix} $
+\end{center}
+\newpage
+resualt : (n = 6 point) \\[0.5in]
+\begin{center}
+ $Bancroft Posittion = \begin{bmatrix}
+         -3857164.451\\
+          3108682.818\\
+          4004057.945
+\end{bmatrix}$ , $RinexPosition = \begin{bmatrix}
+             -3857167.648\\
+              3108694.913\\
+              4004041.687
+\end{bmatrix}$ \\[0.5in]
+$\Delta P_{Bancraft,Rinex} = \begin{bmatrix}
+           3.196\\
+            -12.094\\
+          16.258
+\end{bmatrix}$
+\end{center}
+
+\end{document}
